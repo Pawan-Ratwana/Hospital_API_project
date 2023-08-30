@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true })); // Enable URL-encoded form data
 
 // Include your routes using the '/api' base path
 app.use('/', require('./routes'));
-
+ 
 // Start the server
 app.listen(port, function (err) {
     if (err) {
