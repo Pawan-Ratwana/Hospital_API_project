@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
+// Define the Patient schema
 const patientSchema = new mongoose.Schema({
-
   phone: {
     type: Number,
     maxlength: 10,
@@ -9,27 +9,18 @@ const patientSchema = new mongoose.Schema({
   },
   name: {
     type: String,
-    required: true,
+    required: true
   },
-  doctorName: { 
+  doctorName: {
     type: String,
-  required: true 
-}
-},
-  {
-    timestamps: true
-  });
+    required: true
+  }
+}, {
+  timestamps: true // Adds createdAt and updatedAt timestamps
+});
 
-
-// Sign JWT and return
-//   patientSchema.methods.getSignedJwtToken = function() {
-//   return jwt.sign({ id: this._id }, 'secret', {
-//     expiresIn: '120m'
-//   });
-// };
-
-
+// Create the Patient model using the schema
 const Patient = mongoose.model('Patient', patientSchema);
+
+// Export the Patient model
 module.exports = Patient;
-
-
